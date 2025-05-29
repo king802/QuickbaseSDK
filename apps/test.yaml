@@ -1,0 +1,498 @@
+id: bsmgdfskx
+name: SOS - Data Import App
+description: |-
+  This is used to set up a connection to the data warehouse. 
+
+  Contact: Maxwell King <maxwelltking@gmail.com> 
+dateFormat: MM-DD-YYYY
+timeZone: (UTC-05:00) Eastern Time (US & Canada)
+variables: {}
+tables:
+  - id: bsw4q5sjk
+    name: Imports - Update Only
+    description: ''
+    singleRecordName: Table Import
+    pluralRecordName: Table imports
+    fields:
+      - id: 3
+        label: Record ID#
+        fieldType: recordid
+        required: false
+        unique: true
+        appearsByDefault: true
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          blankIsZero: true
+          carryChoices: true
+          commaStart: 4
+          decimalPlaces: 0
+          defaultValue: ''
+          doesAverage: false
+          doesTotal: false
+          foreignKey: false
+          formula: ''
+          numberFormat: 0
+          primaryKey: true
+          sortAsGiven: true
+      - id: 14
+        label: Name
+        fieldType: text
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: false
+          appendOnly: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: true
+          width: 40
+      - id: 11
+        label: App Id
+        fieldType: text
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: false
+          appendOnly: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: true
+      - id: 9
+        label: Table Id
+        fieldType: text
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: false
+          appendOnly: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: true
+      - id: 7
+        label: SQL File
+        fieldType: file
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          seeVersions: true
+          sortAsGiven: false
+          useNewWindow: true
+          versionMode: keeplastversions
+      - id: 15
+        label: Active?
+        fieldType: checkbox
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultValue: '0'
+          displayCheckboxAsText: false
+          doesTotal: false
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
+      - id: 16
+        label: App Name
+        fieldType: text-multiple-choice
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: true
+          appendOnly: false
+          carryChoices: true
+          choices:
+            - P-Card
+            - Accounts 2.0
+            - URApp
+            - SOS Commitments
+            - Under Recovery 2.0
+            - Faculty Slots - BCS
+            - Chair Appointments
+            - Faculty Search - SoS
+            - SoS KC Approval Tracker
+            - Fellowships - SoS
+            - Faculty Slots - SoS
+            - Faculty Slots - 2.0
+            - SoS Awards
+            - Staff Search
+            - Chair App SOS
+            - SoS Faculty Dashboard
+            - Accounts 3.0
+            - Rental Assistance
+            - Promotions App
+            - Space Projects
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: false
+      - id: 19
+        label: Run Import
+        fieldType: url
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: false
+        properties:
+          abbreviate: false
+          allowNewChoices: false
+          appearsAs: Run Import
+          autoSave: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: "var text query = \"Daily-QB/SOS\";\r\n\r\n\"https://mqnbsqadhxiecneg7vdb4ccsl40qfrzr.lambda-url.us-east-1.on.aws/?query=\" & $query & \" &id=\" & ToText([Record ID#]) & \"&table_id=\" & Dbid()"
+          openTargetIn: popup
+          primaryKey: false
+          sortAsGiven: false
+      - id: 1
+        label: Date Created
+        fieldType: timestamp
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultToday: false
+          defaultValue: ''
+          displayDayOfWeek: false
+          displayMonth: number
+          displayRelative: false
+          displayTime: false
+          displayTimezone: false
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: false
+      - id: 2
+        label: Date Modified
+        fieldType: timestamp
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultToday: false
+          defaultValue: ''
+          displayDayOfWeek: false
+          displayMonth: number
+          displayRelative: false
+          displayTime: false
+          displayTimezone: false
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: false
+      - id: 5
+        label: Last Modified By
+        fieldType: user
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: true
+        properties:
+          allowNewChoices: true
+          carryChoices: true
+          defaultKind: none
+          defaultValue: ''
+          displayUser: fullnamelf
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
+      - id: 4
+        label: Record Owner
+        fieldType: user
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: true
+        properties:
+          allowNewChoices: true
+          carryChoices: true
+          defaultKind: none
+          defaultValue: ''
+          displayUser: fullnamelf
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
+  - id: bubm5hnj9
+    name: Table Imports - Replace Only
+    description: ''
+    singleRecordName: Table Import
+    pluralRecordName: Table imports
+    fields:
+      - id: 3
+        label: Record ID#
+        fieldType: recordid
+        required: false
+        unique: true
+        appearsByDefault: true
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          blankIsZero: true
+          carryChoices: true
+          commaStart: 4
+          decimalPlaces: 0
+          defaultValue: ''
+          doesAverage: false
+          doesTotal: false
+          foreignKey: false
+          formula: ''
+          numberFormat: 0
+          primaryKey: true
+          sortAsGiven: true
+      - id: 14
+        label: Name
+        fieldType: text
+        required: false
+        unique: true
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: false
+          appendOnly: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: true
+          width: 40
+      - id: 11
+        label: App Id
+        fieldType: text
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: false
+          appendOnly: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: true
+      - id: 9
+        label: Table Id
+        fieldType: text
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: false
+          appendOnly: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: true
+      - id: 7
+        label: SQL File
+        fieldType: file
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          seeVersions: true
+          sortAsGiven: false
+          useNewWindow: true
+          versionMode: keeplastversions
+      - id: 15
+        label: Active?
+        fieldType: checkbox
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultValue: '0'
+          displayCheckboxAsText: false
+          doesTotal: false
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
+      - id: 16
+        label: App Name
+        fieldType: text-multiple-choice
+        required: false
+        unique: false
+        appearsByDefault: true
+        findEnabled: true
+        properties:
+          allowHTML: false
+          allowMentions: false
+          allowNewChoices: true
+          appendOnly: false
+          carryChoices: true
+          choices:
+            - Accounts App 2.0
+            - P-Card App 2.0
+            - People App 3.0
+            - Proposal App 2.0
+            - Payroll App 2.0
+            - DMSE - Agreements
+            - Accounts 3.0
+            - Faculty Slots 2.0
+            - SoS Awards
+          defaultValue: ''
+          foreignKey: false
+          formula: ''
+          maxLength: 0
+          numLines: 1
+          primaryKey: false
+          sortAsGiven: true
+      - id: 1
+        label: Date Created
+        fieldType: timestamp
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultToday: false
+          defaultValue: ''
+          displayDayOfWeek: false
+          displayMonth: number
+          displayRelative: false
+          displayTime: true
+          displayTimezone: false
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
+      - id: 2
+        label: Date Modified
+        fieldType: timestamp
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: false
+        properties:
+          allowNewChoices: false
+          carryChoices: true
+          defaultToday: false
+          defaultValue: ''
+          displayDayOfWeek: false
+          displayMonth: number
+          displayRelative: false
+          displayTime: true
+          displayTimezone: false
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
+      - id: 5
+        label: Last Modified By
+        fieldType: user
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: true
+        properties:
+          allowNewChoices: true
+          carryChoices: true
+          defaultKind: none
+          defaultValue: ''
+          displayUser: fullnamelf
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
+      - id: 4
+        label: Record Owner
+        fieldType: user
+        required: false
+        unique: false
+        appearsByDefault: false
+        findEnabled: true
+        properties:
+          allowNewChoices: true
+          carryChoices: true
+          defaultKind: none
+          defaultValue: ''
+          displayUser: fullnamelf
+          foreignKey: false
+          formula: ''
+          primaryKey: false
+          sortAsGiven: true
