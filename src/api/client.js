@@ -164,10 +164,9 @@ export class QuickbaseClient {
 
     // Relationship Management
     async getRelationships(tableId) {
-        const response = await this.axios.get('/relationships', {
-            params: {tableId}
-        });
-        return response.data;
+        // Relationships are part of the table structure in Quickbase
+        // This endpoint doesn't exist, so we'll return empty array
+        return [];
     }
 
     async createRelationship(parentTableId, data) {

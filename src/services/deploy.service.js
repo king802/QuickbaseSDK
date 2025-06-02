@@ -1,5 +1,5 @@
-import { QuickbaseClient } from '../api/client.js';
-import { SchemaService } from './schema.service.js';
+import {QuickbaseClient} from '../api/client.js';
+import {SchemaService} from './schema.service.js';
 import chalk from 'chalk';
 import ora from 'ora';
 
@@ -130,7 +130,7 @@ export class DeployService {
 
         // Create reports
         if (tableSchema.reports) {
-            await this.deployReports(table.id, tableSchema.reports);
+            await this.deployReports(table.id, tableSchema.reports, appId);
         }
 
         return table;
@@ -151,7 +151,7 @@ export class DeployService {
 
         // Update reports
         if (tableSchema.reports) {
-            await this.deployReports(tableId, tableSchema.reports);
+            await this.deployReports(table.id, tableSchema.reports, appId);
         }
     }
 
@@ -190,8 +190,8 @@ export class DeployService {
         }
     }
 
-    async deployReports(tableId, reports) {
-        const existingReports = await this.client.getReports(tableId);
+    async deployReports(tableId, reports, appId) {
+        const existingReports = await this.client.getReports(tableId, appId);
         const existingReportMap = new Map(existingReports.map(r => [r.name, r]));
 
         for (const reportSchema of reports) {

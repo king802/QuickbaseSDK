@@ -1,5 +1,5 @@
-import { QuickbaseClient } from '../api/client.js';
-import { SchemaService } from './schema.service.js';
+import {QuickbaseClient} from '../api/client.js';
+import {SchemaService} from './schema.service.js';
 import chalk from 'chalk';
 import ora from 'ora';
 
@@ -88,12 +88,10 @@ export class PullService {
             }
         }
 
-        // Get relationships - handle gracefully if they fail
+        // Extract relationships from table metadata
         let relationships = [];
-        try {
-            relationships = await this.client.getRelationships(tableId);
-        } catch (error) {
-            // Relationships might not be accessible
+        if (table.relationships) {
+            relationships = table.relationships;
         }
 
         // Build table schema
